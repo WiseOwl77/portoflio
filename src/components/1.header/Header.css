@@ -1,3 +1,13 @@
+/* =========================================
+table of contents
+============================================
+1.header design
+2.icon button design
+3.model pop up design
+4.media query
+============================================
+*/
+
 header.flex {
 	justify-content: space-between;
 	padding: 0 2.4rem;
@@ -25,11 +35,37 @@ header ul li a:hover {
 	font-weight: 500;
 }
 header button {
-	font-size: 16px;
+	font-size: 15px;
 	padding: 16px;
 }
 header button.menu {
 	display: none;
+	font-size: 25px;
+}
+/*icon button*/
+header .icon-list,
+header button.mode {
+	background-color: var(--secondary);
+	color: var(--title);
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid rgb(131, 21, 122);
+}
+header .icon-list:hover,
+header button.mode:hover {
+	background-color: var(--border);
+	color: black;
+	transition: 0.2s;
+}
+header .icon-cancel{
+	font-size: 1.5rem;
+	transition:0.3s;
+}
+header .icon-cancel:hover{
+	font-size: 1.7rem;
+	color: black;
+	rotate: 180deg;
 }
 
 /*model pop up */
@@ -39,34 +75,48 @@ header .fixed {
 	z-index: 11;
 	background-color: rgba(84, 1, 95, 0.925);
 }
+/*animation*/
+@keyframes mymove {
+	0% {
+		scale: 0;
+	}
+	60% {
+		scale: 1.1;
+	}
+	100% {
+		scale: 1;
+	}
+}
+
 header .fixed ul.model {
+	animation: mymove 0.5s;
 	width: 85%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 2rem;
+	margin-top: 1.5rem;
 	border-radius: 1rem;
-	padding: 1rem 2rem;
+	padding: 0rem 1.5rem;
 	background-color: var(--secondary);
 }
 header .fixed ul.model li {
 	border-bottom: 1px solid var(--border);
-	padding: 0.77rem 0;
+	padding: 0.7rem 1rem;
 	font-size: 1rem;
 }
 header .fixed ul.model li:first-child {
 	text-align: right;
-    border-bottom: none;
-    padding-bottom: 0;
-    padding-top: 0.2rem;
+	border-bottom: none;
+	padding-bottom: 0;
+	padding-top: 0.2rem;
 }
 
 header .fixed ul.model li:last-child {
 	border-bottom: none;
 }
-header .fixed ul.model li a{
-    font-size: 1rem;
+header .fixed ul.model li a {
+	font-size: 1rem;
 }
-
+/*media query*/
 @media (max-width: 700px) {
 	header.flex nav {
 		display: none;

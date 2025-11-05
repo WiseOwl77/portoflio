@@ -6,7 +6,10 @@ const Header = () => {
 
 	return (
 		<header className="border flex">
-			<button onClick={() => setShowModal(true)} className="menu">show model</button>
+			<button
+				onClick={() => setShowModal(true)}
+				className="menu icon-list"
+			></button>
 			<div />
 			<nav>
 				<ul className="flex">
@@ -27,32 +30,36 @@ const Header = () => {
 					</li>
 				</ul>
 			</nav>
-			<button>light</button>
-{showModal && (
-  	<div className="fixed">
-				<ul className="model">
-          <li>
-            <button onClick={() => setShowModal(false)}>close</button>
-          </li>
-					<li>
-						<a href="#">About</a>
-					</li>
-					<li>
-						<a href="#">Home</a>
-					</li>
-					<li>
-						<a href="#">Projects</a>
-					</li>
-					<li>
-						<a href="#">Skills</a>
-					</li>
-					<li>
-						<a href="#">Contact</a>
-					</li>
-				</ul>
-			</div>
-)}
-		
+			<button className="mode flex">
+				<span className="icon-moon-fill"></span>
+			</button>
+			{showModal && (
+				<div className="fixed">
+					<ul className="model">
+						<li>
+							<button
+								className="icon-cancel"
+								onClick={() => setShowModal(false)}
+							/>
+						</li>
+						<li>
+							<a href="#">About</a>
+						</li>
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">Projects</a>
+						</li>
+						<li>
+							<a href="#">Skills</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
+					</ul>
+				</div>
+			)}
 		</header>
 	);
 };
