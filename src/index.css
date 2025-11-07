@@ -9,6 +9,9 @@ html {
 	scroll-behavior: smooth;
 	letter-spacing: 1px;
 }
+html {
+	box-sizing: border-box;
+}
 
 *,
 *:before,
@@ -26,7 +29,7 @@ html {
 	--secondary: #78156ee9;
 	--border: #902f88;
 	--title: rgb(244, 244, 245);
-	--subtitle: rgb(161, 161, 170);
+	--subtitle: rgb(217, 217, 225);
 	--nav-color: #98028b;
 	--move-color: #132ada;
 }
@@ -44,10 +47,13 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	background-color: var(--secondary);
+	padding: 0 2rem 0;
 }
 .divider {
 	border-bottom: 1px solid var(--border);
 	margin: 3rem;
+	width: calc(100% + 1.8rem + 1.8rem);
+	margin-left: -1.8rem;
 }
 li {
 	list-style: none;
@@ -74,3 +80,20 @@ button:active {
 	scale: 0.9;
 }
 
+@media (max-width: 1000px) {
+	.container {
+		width: 90%;
+		padding: 0 1.7rem;
+	}
+	.divider {
+		width: calc(100% + 1.7rem + 1.7rem);
+		margin-left: -1.7rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.container {
+		width: 98%;
+		padding: 0 1.7rem;
+	}
+}

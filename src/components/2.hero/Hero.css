@@ -1,0 +1,72 @@
+/* =========================================
+table of contents
+============================================
+1.left section design
+2.right section design
+============================================
+*/
+
+
+section.hero {
+	margin-top: 3rem;
+}
+
+/* ============================
+1. left section design
+===============================
+*/
+section.hero .parent-avatar.flex {
+	align-items: end;
+	gap: 0.2rem;
+}
+
+section.hero .left-section {
+	flex-grow: 1;
+}
+
+.icon-verified_user {
+	color: rgb(93, 188, 252);
+	font-size: 1.1rem;
+	margin-bottom: 0.3rem;
+}
+
+section.hero .avatar {
+	width: 88px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	padding: 1px;
+}
+section.hero h1.title {
+	font-size: 1.8rem;
+	line-height: 1.3;
+	margin: 20px 0;
+	color: var(--title);
+}
+section.hero h6.subtitle {
+	font-size: 0.9rem;
+	line-height: 1.3;
+	margin: 20px 0;
+	color: var(--subtitle);
+}
+section.hero p.description {
+	font-size: 0.9rem;
+	line-height: 1.5rem;
+	margin-bottom: 30px;
+	color: var(--subtitle);
+}
+section.hero .icons.flex {
+	font-size: 1.1rem;
+	gap: 1rem;
+	color: var(--subtitle);
+}
+
+section.hero .icons.flex:hover {
+    font-size: 1.4rem;
+	transition: 0.3s;
+    cursor: pointer;
+	color: var(--title);
+}
+/* ============================
+2. right section design
+===============================
+*/
