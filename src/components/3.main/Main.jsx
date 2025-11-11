@@ -3,7 +3,7 @@ import "./Main.css";
 function Main() {
 	return (
 		<main className="flex">
-			<section className="flex left-section">
+			<section className="border flex left-section">
 				<button className="active">All Projects</button>
 				<button>Html & Css</button>
 				<button>JavaScript</button>
@@ -11,7 +11,7 @@ function Main() {
 				<button>Node & Express</button>
 			</section>
 
-			<section className=" right-section">
+			<section className="border flex right-section">
 				{["nn", "ll", "kk"].map((item) => {
 					return (
             	<article key={item} className="card">
