@@ -1,36 +1,24 @@
 import { useState } from "react";
 import "./Main.css";
-
-const myProjects = [
-	{
-		projectTitle: "Project 1",
-		category: "css",
-		imgPath: "",
-		github: "",
-	},
-	{
-		projectTitle: "Project 2",
-		category: "java",
-		imgPath: "",
-		github: "",
-	},
-	{
-		projectTitle: "Project 3",
-		category: "",
-		imgPath: "",
-		github: "",
-	},
-];
+import { myProjects } from "./myProjects";
 
 const Main = () => {
 	const [currentActive, setcurrentActive] = useState("all");
 	const [arr, setArr] = useState(myProjects);
+	const handleButtonClick = (buttonCategory) => {
+		setcurrentActive(buttonCategory);
+		const newArr = myProjects.filter((item) => {
+			return item.category === buttonCategory;
+		});
+		setArr(newArr);
+	};
 	return (
 		<main className="flex">
-			<section className="border flex left-section">
+			<section className="flex left-section">
 				<button
 					onClick={() => {
 						setcurrentActive("all");
+						setArr(myProjects);
 					}}
 					className={currentActive === "all" ? "active" : null}
 				>
@@ -39,10 +27,7 @@ const Main = () => {
 				<button
 					onClick={() => {
 						setcurrentActive("css");
-						const newArr = myProjects.filter((item) => {
-							return item.category === "css";
-						});
-						setArr(newArr);
+						handleButtonClick("css");
 					}}
 					className={currentActive === "css" ? "active" : null}
 				>
@@ -51,10 +36,7 @@ const Main = () => {
 				<button
 					onClick={() => {
 						setcurrentActive("java");
-						const newArr = myProjects.filter((item) => {
-							return item.category === "java";
-						});
-						setArr(newArr);
+						handleButtonClick("java");
 					}}
 					className={currentActive === "java" ? "active" : null}
 				>
@@ -63,10 +45,7 @@ const Main = () => {
 				<button
 					onClick={() => {
 						setcurrentActive("react");
-						const newArr = myProjects.filter((item) => {
-							return item.category === "react";
-						});
-						setArr(newArr);
+						handleButtonClick("react");
 					}}
 					className={currentActive === "react" ? "active" : null}
 				>
@@ -75,10 +54,7 @@ const Main = () => {
 				<button
 					onClick={() => {
 						setcurrentActive("node");
-						const newArr = myProjects.filter((item) => {
-							return item.category === "node";
-						});
-						setArr(newArr);
+						handleButtonClick("node");
 					}}
 					className={currentActive === "node" ? "active" : null}
 				>
@@ -86,7 +62,7 @@ const Main = () => {
 				</button>
 			</section>
 
-			<section className="border flex right-section">
+			<section className="flex right-section">
 				{myProjects.map((item) => {
 					return (
 						<article key={item.imgPath} className="card">
