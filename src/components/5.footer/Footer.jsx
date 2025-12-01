@@ -17,7 +17,7 @@ const Footer = () => {
 					<a href="">contact</a>
 				</li>
 			</ul>
-			<p>2025 spencer sharp. All rights reserved.</p>
+			<p>© 2025 spencer sharp. All rights reserved.</p>
 		</footer>
 	);
 };

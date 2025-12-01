@@ -1,13 +1,12 @@
 import React from "react";
 import "./Contact.css";
 import { useForm, ValidationError } from "@formspree/react";
+import Lottie from "lottie-react";
+import checkedAnimation from "../../animation/Checked.json";
+import hireAnimation from "../../animation/hire.json";
 
 const Contact = () => {
 	const [state, handleSubmit] = useForm("xyzqbagw");
-
-	if (state.succeeded) {
-		return <h1>Thanks for message!</h1>;
-	}
 
 	return (
 		<section className="contact-us">
@@ -19,11 +18,17 @@ const Contact = () => {
 				Contact us for more information and Get notified when I puplish
 				somting new.
 			</p>
-			<div className="flex">
+			<div style={{ justifyContent: "space-between" }} className="flex">
 				<form onSubmit={handleSubmit} className="">
 					<div className="flex">
 						<label htmlFor="email">Email Adress:</label>
-						<input required type="email" name="email" id="email" />
+						<input
+							autoComplete="off"
+							required
+							type="email"
+							name="email"
+							id="email"
+						/>
 						<ValidationError
 							prefix="Email"
 							field="email"
@@ -33,11 +38,10 @@ const Contact = () => {
 
 					<div className="flex" style={{ marginTop: "24px" }}>
 						<label htmlFor="message">
-							Your message:<p></p>
+							<p>Your message:</p>
 						</label>
 						<textarea
 							required
-							type="message"
 							name="message"
 							id="message"
 						></textarea>
@@ -52,10 +56,29 @@ const Contact = () => {
 						disabled={state.submitting}
 						className="submit"
 					>
-						Submit
+						{state.submitting ? "submitting ..." : "submit"}
 					</button>
+					{state.succeeded && (
+						<p
+							className="flex"
+							style={{ fontSize: "16px", marginTop: "1.7rem" }}
+						>
+							<Lottie
+								loop={false}
+								style={{ height: "35px" }}
+								animationData={checkedAnimation}
+							/>
+							Your message has been sent successfully{" "}
+						</p>
+					)}
 				</form>
-				<div className="border animation">animation</div>
+				<div className="animation">
+					<Lottie
+						className="hireAnimation"
+						style={{ height: "100" }}
+						animationData={hireAnimation}
+					/>
+				</div>
 			</div>
 		</section>
 	);

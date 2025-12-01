@@ -2,6 +2,7 @@ section.contact-us .icon-envelope {
 	color: var(--subtitle);
 	max-width: 1rem;
 	font-size: 1.8rem;
+	margin: 1rem;
 }
 section.contact-us .title {
 	font-size: 2.1rem;
@@ -19,26 +20,45 @@ section.contact-us .label {
 section.contact-us #email,
 section.contact-us #message {
 	all: unset;
-	background-color: blanchedalmond;
-	border: 1px solid rebeccapurple;
+	background-color: rgba(63, 63, 70, 0.15);
+	border: 1px solid rgb(63, 63, 70);
 	width: 16rem;
 	padding: 0.5rem 1rem;
 	border-radius: 5px;
 	transition: 0.3s;
 	font-size: 1.1rem;
+	margin-left: 1rem;
 }
-section.contact-us #email:focus section.contact-us #message:focus {
+
+.light section.contact-us #email,
+.light section.contact-us #message {
+	background-color: rgba(255, 255, 255, 0.162);
+	border: 1px solid rgba(128, 128, 128, 0.451);
+	box-shadow: 1px 1px 1px rgba(73, 73, 75, 0.105);
+	gap: 16px;
+}
+
+section.contact-us #email:focus section.contact-us #message:focus,
+section.contact-us #email:hover section.contact-us #message:hover {
 	border: 1px solid rgb(171, 152, 191);
 }
-section.contact-us #email:hover section.contact-us #message:hover {
-	border: 1px solid rgb(132, 101, 164);
+
+.light section.contact-us #email:focus .light section.contact-us #message:focus,
+.light
+	section.contact-us
+	#email:hover
+	.light
+	section.contact-us
+	#message:hover {
+	border: 1px solid rgb(99, 101, 101);
 }
+
 section.contact-us #message {
 	min-height: 9rem;
 	resize: vertical;
 }
 section.contact-us .submit {
-	background: red;
+	background: var(--nav-color);
 	padding: 0.75rem 2rem;
 	text-align: center;
 	font-size: 1.05rem;
@@ -52,20 +72,29 @@ section.contact-us .submit {
 section.contact-us .submit:hover {
 	scale: 0.97;
 }
+
+.animation{
+	size: 55px;
+}
+
 /*media query*/
+@media (max-width: 1250px) {
+section.email-animation{display: none;}
+}
+
 @media (max-width: 600px) {
 	section.contact-us .animation {
 		display: none;
 	}
 	section.contact-us form {
 		display: flex;
-		font-display: column;
+		flex-direction: column;
 		width: 85%;
 		margin-left: auto;
 		margin-right: auto;
 	}
-	section.contact-us form div {
-		font-display: column;
+	section.contact-us form div.flex {
+		flex-direction: column;
 		align-items: start;
 	}
 	section.contact-us #email,

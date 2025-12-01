@@ -1,4 +1,6 @@
 import "./Hero.css";
+import Lottie from "lottie-react";
+import devAnimation from "../../animation/dev.json";
 
 function Hero() {
 	return (
@@ -15,7 +17,12 @@ function Hero() {
 					<div className="icon-linkedin"></div>
 				</div>
 			</div>
-			<div className="right-section animation border">animation</div>
+			<div className="right-section animation">
+				<Lottie className="devAnimation"
+						style={{ height: "300", marginLeft:"100px"}}
+						animationData={devAnimation}
+					/>
+			</div>
 		</section>
 	);
 }

@@ -58,6 +58,9 @@ header button.mode:hover {
 	color: black;
 	transition: 0.2s;
 }
+header .icon-sun{
+	color: lch(64.21% 64.62 59.35);
+}
 header .icon-x{
 	font-size: 1.5rem;
 	transition:0.3s;

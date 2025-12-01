@@ -22,7 +22,7 @@ main section.left-section.flex {
 }
 
 main section.left-section.flex button {
-	background: red;
+	background: var(--nav-color);
 	width: 11rem;
 	padding: 0.75rem 0;
 	text-align: center;
@@ -42,7 +42,10 @@ main section.left-section.flex button.active {
 	font-weight: bold;
 	letter-spacing: 0.6px;
 	padding: 0.8rem 0;
-	border: 1px solid blue;
+	border: 1px solid var(--blue);
+}
+.light main section.left-section.flex button.active {
+	border: #000;
 }
 
 /*===============================
@@ -50,23 +53,29 @@ main section.left-section.flex button.active {
 =================================
 */
 main section.right-section {
-	/*flex-grow: 1;*/
+	flex-grow: 1;
 	flex-wrap: wrap;
 	row-gap: 2rem;
 	column-gap: 16px;
 	justify-content: center;
 }
 .card {
+	box-shadow: -4px 1px 1px rgba(0, 0, 0, 0.2);
 	border: 1px solid rgb(220, 143, 143);
 	transition: 0.3s;
-	border-radius: 5px;
+	border: none;
 	background-image: linear-gradient(
 		rgba (255, 255, 255, 0.05),
 		rgba (255, 255, 255, 0.05)
 	);
 }
+
+.light .card .light .card:hover {
+	border: none;
+}
 .card:hover {
 	border: 1px solid rgb(117, 39, 39);
+	background:rgba(248, 248, 248);
 	rotate: 1deg;
 	scale: 1.01;
 	cursor: pointer;
@@ -79,6 +88,7 @@ main section.right-section {
 }
 .card .box .title {
 	color: var(--title);
+	text-transform: capitalize;
 }
 .card .box .sup-title {
 	color: var(--subtitle);
