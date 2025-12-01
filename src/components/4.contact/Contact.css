@@ -79,7 +79,7 @@ section.contact-us .submit:hover {
 
 /*media query*/
 @media (max-width: 1250px) {
-section.email-animation{display: none;}
+section.contact-us .animation{display: none;}
 }
 
 @media (max-width: 600px) {

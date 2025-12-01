@@ -18,7 +18,7 @@ const Header = () => {
 	}, [theme]);
 
 	return (
-		<header className="border flex">
+		<header className=" flex">
 			<button
 				onClick={() => setShowModal(true)}
 				className="menu icon-lines"
